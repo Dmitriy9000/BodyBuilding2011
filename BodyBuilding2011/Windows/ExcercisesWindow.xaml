@@ -1,0 +1,88 @@
+﻿<Window x:Class="BodyBuilding2011.Windows.ExcercisesWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Windows="clr-namespace:BodyBuilding2011.Windows" xmlns:Converters="clr-namespace:BodyBuilding2011.Converters" Title="Библиотека упражнений" Height="537" Width="665">
+	<Window.Resources>
+
+		<Converters:FavoritesToNameConverter x:Key="favoritesToNameConverter"></Converters:FavoritesToNameConverter>
+		<Converters:TwoListsToIExcerciseListConverters x:Key="twoListsToIExcerciseListConverter"></Converters:TwoListsToIExcerciseListConverters>
+		<!--<Converters:FavoritesToFavoritesListConverter x:Key="favoritesToFavoritesListConverter"></Converters:FavoritesToFavoritesListConverter>-->
+
+		<DataTemplate x:Key="excerciseDataTemplate">
+			<StackPanel Orientation="Horizontal">
+				<CheckBox Template="{StaticResource favoritesCheckbox}" Margin="5,0" ToolTip="В избранные упражнения" IsChecked="{Binding ., Converter={StaticResource favoritesToNameConverter}, Mode=OneWay}" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" Tag="{Binding}"></CheckBox>
+				<Label Content="{Binding Name}" ToolTipService.ShowDuration="500000">
+					<Label.ToolTip>
+						<Grid Width="650">
+							<TextBlock FontSize="16" Text="{Binding Info}" TextWrapping="WrapWithOverflow" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5" />
+						</Grid>
+					</Label.ToolTip>
+				</Label>
+			</StackPanel>
+		</DataTemplate>
+
+		<GroupStyle x:Key="excercisesGroupStyle">
+			<GroupStyle.HeaderTemplate>
+				<DataTemplate>
+					<StackPanel Orientation="Horizontal" Background="PowderBlue">
+						<Label FontWeight="Normal" FontSize="16">Группа мышц:</Label>
+						<Label Content="{Binding Name}" FontSize="16" FontWeight="Normal"></Label>
+					</StackPanel>
+				</DataTemplate>
+			</GroupStyle.HeaderTemplate>
+		</GroupStyle>
+
+	</Window.Resources>
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*"></RowDefinition>
+			<RowDefinition Height="50"></RowDefinition>
+		</Grid.RowDefinitions>
+
+		<TabControl Grid.Row="0" Name="extypesTab" SelectionChanged="extypesTab_SelectionChanged">
+
+			<TabItem Header="Избранное" GotFocus="TabItem_GotFocus">
+				<ListBox Name="favoritesLb" MouseDoubleClick="favoritesLb_MouseDoubleClick" ItemsSource="{Binding Source={x:Static Windows:MainWindow.FavoritesLib}, Path=Lib}">
+					<ListBox.ItemTemplate>
+						<DataTemplate>
+							<StackPanel Orientation="Horizontal">
+								<Label Content="{Binding .}"></Label>
+							</StackPanel>
+						</DataTemplate>
+					</ListBox.ItemTemplate>
+				</ListBox>
+			</TabItem>
+
+			<TabItem Header="Упражнение">
+				<ListBox Name="excercisesLb" ItemsSource="{Binding Source={x:Static Windows:MainWindow.ExcercisesLib}, Path=Lib}" ItemTemplate="{StaticResource excerciseDataTemplate}" MouseDoubleClick="excercisesLb_MouseDoubleClick">
+					<ListBox.GroupStyle>
+						<GroupStyle>
+							<GroupStyle.HeaderTemplate>
+								<DataTemplate>
+									<StackPanel Orientation="Horizontal" Background="PowderBlue">
+										<Label FontWeight="Normal" FontSize="16">Группа мышц:</Label>
+										<Label Content="{Binding Name}" FontSize="16" FontWeight="Normal"></Label>
+									</StackPanel>
+								</DataTemplate>
+							</GroupStyle.HeaderTemplate>
+						</GroupStyle>
+					</ListBox.GroupStyle>
+				</ListBox>
+			</TabItem>
+			<TabItem Header="Суперсеты">
+				<Grid>
+					<ListBox Name="supersetsLb" Margin="0,0,0,32" ItemsSource="{Binding Source={x:Static Windows:MainWindow.SuperSetsLib}, Path=Lib}" ItemTemplate="{StaticResource excerciseDataTemplate}" MouseDoubleClick="supersetsLb_MouseDoubleClick">
+						<ListBox.GroupStyle>
+							<StaticResource ResourceKey="excercisesGroupStyle"></StaticResource>
+						</ListBox.GroupStyle>
+					</ListBox>
+					<Button Content="+" Height="23" HorizontalAlignment="Left" Margin="579,387,0,0" Name="button1" VerticalAlignment="Top" Width="39" Click="button1_Click" />
+				</Grid>
+
+			</TabItem>
+
+		</TabControl>
+
+		<Grid Grid.Row="1">
+			<Button Margin="383,6,136,14" VerticalAlignment="Center" IsDefault="True" Click="Button_Click">Выбрать</Button>
+			<Button Margin="513,6,6,14" VerticalAlignment="Center" IsCancel="False" Click="Button_Click_1">Отмена</Button>
+		</Grid>
+	</Grid>
+</Window>

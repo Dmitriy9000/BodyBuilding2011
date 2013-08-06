@@ -1,0 +1,19 @@
+﻿<Window x:Class="BodyBuilding2011.Windows.SupersetWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Windows="clr-namespace:BodyBuilding2011.Windows" Title="Суперсет" Height="550" Width="702">
+	<Grid>
+		<Label Content="Название:" Height="28" Name="label1" Margin="14,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="77" />
+		<TextBox Height="23" HorizontalAlignment="Left" Margin="97,12,0,0" Name="nameTb" VerticalAlignment="Top" Width="570" />
+		<TextBox Height="100" HorizontalAlignment="Left" Margin="97,46,0,0" Name="infoTb" VerticalAlignment="Top" Width="570" TextWrapping="WrapWithOverflow" />
+		<Label Content="Описание:" Height="28" HorizontalAlignment="Left" Margin="14,44,0,0" Name="label2" VerticalAlignment="Top" />
+		<GroupBox Header="Упражнения" Height="296" HorizontalAlignment="Left" Margin="8,161,0,0" Name="groupBox1" VerticalAlignment="Top" Width="659">
+			<Grid>
+				<Label Content="Библиотека" Height="28" HorizontalAlignment="Left" Margin="8,16,0,0" Name="label3" VerticalAlignment="Top" />
+				<Label Content="Суперсет" Height="28" HorizontalAlignment="Left" Margin="324,16,0,0" Name="label4" VerticalAlignment="Top" />
+				<ListBox Height="226" HorizontalAlignment="Left" Margin="8,41,0,0" Name="excercisesLb" VerticalAlignment="Top" Width="310" ItemsSource="{Binding Source={x:Static Windows:MainWindow.ExcercisesLib}, Path=Lib}" MouseDown="listBox1_MouseDown" PreviewMouseLeftButtonDown="excercisesLb_PreviewMouseLeftButtonDown" />
+				<ListBox Height="226" HorizontalAlignment="Left" Margin="324,41,0,0" Name="supersetExcLb" VerticalAlignment="Top" Width="310" AllowDrop="True" Drop="supersetExcLb_Drop" DragEnter="supersetExcLb_DragEnter" MouseDoubleClick="supersetExcLb_MouseDoubleClick" />
+			</Grid>
+		</GroupBox>
+		<Button Content="Сохранить" Height="23" HorizontalAlignment="Left" Margin="501,473,0,0" Name="button1" VerticalAlignment="Top" Width="75" Click="button1_Click" />
+		<Button Content="Отмена" Height="23" HorizontalAlignment="Left" Margin="586,473,0,0" Name="button2" VerticalAlignment="Top" Width="75" Click="button2_Click" />
+	</Grid>
+
+</Window>

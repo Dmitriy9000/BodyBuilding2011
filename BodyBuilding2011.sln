@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BodyBuilding2011", "BodyBuilding2011\BodyBuilding2011.csproj", "{9CFA28D9-2A8C-4DE5-9232-51CA03F40CE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrainCalendarTest", "TrainCalendarTest\TrainCalendarTest.csproj", "{A9A16947-6A9D-41F5-972C-F75752A56467}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "BodyBuilding2011Setup", "BodyBuilding2011Setup\BodyBuilding2011Setup.vdproj", "{DAE97580-0730-4D0A-A2C3-2A4BE96ED3E4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9CFA28D9-2A8C-4DE5-9232-51CA03F40CE0}.Debug|x86.ActiveCfg = Debug|x86
+		{9CFA28D9-2A8C-4DE5-9232-51CA03F40CE0}.Debug|x86.Build.0 = Debug|x86
+		{9CFA28D9-2A8C-4DE5-9232-51CA03F40CE0}.Release|x86.ActiveCfg = Release|x86
+		{9CFA28D9-2A8C-4DE5-9232-51CA03F40CE0}.Release|x86.Build.0 = Release|x86
+		{A9A16947-6A9D-41F5-972C-F75752A56467}.Debug|x86.ActiveCfg = Debug|x86
+		{A9A16947-6A9D-41F5-972C-F75752A56467}.Debug|x86.Build.0 = Debug|x86
+		{A9A16947-6A9D-41F5-972C-F75752A56467}.Release|x86.ActiveCfg = Release|x86
+		{A9A16947-6A9D-41F5-972C-F75752A56467}.Release|x86.Build.0 = Release|x86
+		{DAE97580-0730-4D0A-A2C3-2A4BE96ED3E4}.Debug|x86.ActiveCfg = Debug
+		{DAE97580-0730-4D0A-A2C3-2A4BE96ED3E4}.Release|x86.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,74 @@
+﻿<UserControl x:Class="BodyBuilding2011.Controls.TrainCalendar" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" mc:Ignorable="d" d:DesignHeight="743" d:DesignWidth="717" Margin="5" Background="CadetBlue">
+	<UserControl.Resources>
+		<Color A="255" R="112" G="140" B="188" x:Key="ArtBlue"></Color>
+		<SolidColorBrush Color="{StaticResource ArtBlue}" x:Key="ArtBlueBrush"></SolidColorBrush>
+	</UserControl.Resources>
+
+	<Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Black">
+		<Grid VerticalAlignment="Stretch">
+
+			<Grid Height="80" Background="AliceBlue" VerticalAlignment="Top">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="100*"></ColumnDefinition>
+					<ColumnDefinition Width="100*"></ColumnDefinition>
+					<ColumnDefinition Width="100*"></ColumnDefinition>
+					<ColumnDefinition Width="100*"></ColumnDefinition>
+					<ColumnDefinition Width="100*"></ColumnDefinition>
+					<ColumnDefinition Width="100*"></ColumnDefinition>
+					<ColumnDefinition Width="100*"></ColumnDefinition>
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="50"></RowDefinition>
+					<RowDefinition Height="30"></RowDefinition>
+				</Grid.RowDefinitions>
+				<Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="7">
+					<Button Click="Button_Click" Margin="6,10,0,0" HorizontalAlignment="Left" Width="96" Height="34" VerticalAlignment="Top">
+						<Image Source="../Resources/Arrow-180.png"></Image>
+					</Button>
+					<Label Name="monthLb" HorizontalAlignment="Center" Height="44" VerticalAlignment="Top" Foreground="{StaticResource ArtBlueBrush}" Content="Июль 2011" FontWeight="Bold" FontSize="32" FontFamily="Calibri" />
+					<Button Click="Button_Click_1" Margin="0,10,6,0" HorizontalAlignment="Right" Width="106" Height="34" VerticalAlignment="Top">
+						<Image Source="../Resources/Arrow.png"></Image>
+					</Button>
+				</Grid>
+				<Grid Grid.Row="1" Grid.Column="0" Background="LightBlue">
+					<Border BorderBrush="Silver" BorderThickness="1">
+						<Label HorizontalAlignment="Center">Понедельник</Label>
+					</Border>
+				</Grid>
+				<Grid Grid.Row="1" Grid.Column="1" Background="LightBlue">
+					<Border BorderBrush="Silver" BorderThickness="1">
+						<Label HorizontalAlignment="Center">Вторник</Label>
+					</Border>
+				</Grid>
+				<Grid Grid.Row="1" Grid.Column="2" Background="LightBlue">
+					<Border BorderBrush="Silver" BorderThickness="1">
+						<Label HorizontalAlignment="Center">Среда</Label>
+					</Border>
+				</Grid>
+				<Grid Grid.Row="1" Grid.Column="3" Background="LightBlue">
+					<Border BorderBrush="Silver" BorderThickness="1">
+						<Label HorizontalAlignment="Center">Четверг</Label>
+					</Border>
+				</Grid>
+				<Grid Grid.Row="1" Grid.Column="4" Background="LightBlue">
+					<Border BorderBrush="Silver" BorderThickness="1">
+						<Label HorizontalAlignment="Center">Пятница</Label>
+					</Border>
+				</Grid>
+				<Grid Grid.Row="1" Grid.Column="5" Background="LightPink">
+					<Border BorderBrush="Silver" BorderThickness="1">
+						<Label HorizontalAlignment="Center">Суббота</Label>
+					</Border>
+				</Grid>
+				<Grid Grid.Row="1" Grid.Column="6" Background="LightPink">
+					<Border BorderBrush="Silver" BorderThickness="1">
+						<Label HorizontalAlignment="Center">Воскресенье</Label>
+					</Border>
+				</Grid>
+			</Grid>
+
+			<UniformGrid Columns="7" Rows="6" Name="DaysPanel" Margin="0,80,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></UniformGrid>
+
+		</Grid>
+	</Grid>
+</UserControl>

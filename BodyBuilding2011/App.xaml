@@ -1,0 +1,39 @@
+﻿<Application x:Class="BodyBuilding2011.App" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:model="clr-namespace:BodyBuilding2011.Model" xmlns:Converters="clr-namespace:BodyBuilding2011.Converters" StartupUri="Windows/MainWindow.xaml">
+	<Application.Resources>
+
+		<Converters:CalendarDayPositionToBrushConverter x:Key="calendarDayPositionToBrushConverter" />
+		<Color A="200" R="112" G="140" B="188" x:Key="ArtBlue"></Color>
+
+		<Converters:CheckboxToFavoritesConverter x:Key="checkboxToFavoritesConverter"></Converters:CheckboxToFavoritesConverter>
+		<Converters:BoolToCalendarDayBackgroundConverter x:Key="boolToCalendarDayBackgroundConverter"></Converters:BoolToCalendarDayBackgroundConverter>
+
+		<SolidColorBrush Color="{StaticResource ArtBlue}" x:Key="ArtBlueBrush"></SolidColorBrush>
+
+		<Style TargetType="ListBoxItem">
+			<Style.Resources>
+				<SolidColorBrush Color="{StaticResource ArtBlue}" x:Key="{x:Static SystemColors.HighlightBrushKey}"></SolidColorBrush>
+				<SolidColorBrush Color="{StaticResource ArtBlue}" x:Key="{x:Static SystemColors.ControlBrushKey}"></SolidColorBrush>
+			</Style.Resources>
+		</Style>
+
+		<ControlTemplate TargetType="Button" x:Key="imageButton">
+			<Grid>
+				<Grid.Style>
+					<Style>
+						<Style.Triggers>
+							<Trigger Property="Grid.IsMouseOver" Value="True">
+								<Setter Property="Grid.Background" Value="{StaticResource ArtBlueBrush}" />
+							</Trigger>
+						</Style.Triggers>
+					</Style>
+				</Grid.Style>
+				<ContentPresenter></ContentPresenter>
+			</Grid>
+		</ControlTemplate>
+
+		<ControlTemplate TargetType="CheckBox" x:Key="favoritesCheckbox">
+			<Image Source="{TemplateBinding CheckBox.IsChecked, Converter={StaticResource checkboxToFavoritesConverter}}"></Image>
+		</ControlTemplate>
+
+	</Application.Resources>
+</Application>
