@@ -39,7 +39,7 @@ namespace BodyBuilding2011.Windows
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            if (DateTime.Now > new DateTime(2011, 6, 20))
+            if (DateTime.Now > new DateTime(2018, 6, 20))
             {
                 MessageBox.Show(
                     "Для продолжения использования программы вы должны выслать фотографии со сканами документов на адрес электронной почты ducebod@gmail.com");
