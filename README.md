@@ -1,1 +1,1 @@
-Bodybuilding diary on MS WPF
+Bodybuilder's diary running on WPF
