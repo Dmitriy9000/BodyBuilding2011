@@ -39,19 +39,10 @@ namespace BodyBuilding2011.Windows
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            if (DateTime.Now > new DateTime(2018, 6, 20))
-            {
-                MessageBox.Show(
-                    "Для продолжения использования программы вы должны выслать фотографии со сканами документов на адрес электронной почты ducebod@gmail.com");
-                _NoSave = true;
-                Close();
-            }
-            else
-            {
-                CommandBindingInit();
-                LoadFiles();
-                Results.SetCalendar(calendar);
-            }
+            CommandBindingInit();
+            LoadFiles();
+            Results.SetCalendar(calendar);
+
             //calendar.MarkedDays = new ObservableCollection<DateTime>(Results.TrainDays.Select(c => c.Date));
         }
 
